@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="refresh" content="5" />
+  <title>Sensor Data</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<style>
+  /* CSS Reset */
+  body {
+    /* font-family: 'Baloo Bhai', cursive; */
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../static/green.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* opacity: 0.5; */
+  }
+
+  .left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 60px;
+    top: 20px;
+  }
+
+  /* .left img {
+    width: 136px;
+    filter: invert(100%);
+  } */
+
+  .left div {
+    line-height: 19px;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mid {
+    display: block;
+    width: 36%;
+    margin: 29px auto;
+    /* border: 2px solid green; */
+  }
+
+  .right {
+    position: absolute;
+    right: 34px;
+    top: 43px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+  }
+
+  .navbar {
+    display: inline-block;
+    width: 710px;
+    margin-left: 290px;
+    margin-top: 5px;
+    /* border: 3px solid cornsilk; */
+  }
+
+  .navbar li {
+    display: inline-block;
+    font-size: 25px;
+  }
+
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 34px 23px;
+    font-family: 'Baloo Bhai', cursive;
+
+  }
+
+  .navbar li a:hover,
+  .navbar li a.active {
+    text-decoration: none;
+    color: grey;
+
+  }
+
+  .btn {
+    font-family: 'Baloo Bhai', cursive;
+    margin: 0px 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: rgb(31, 30, 30);
+  }
+
+  .container {
+    /* border: 2px solid white; */
+    margin: auto;
+    margin-top: 40px;
+    padding: 75px;
+    width: 33%;
+    /* border-radius: 28px; */
+  }
+
+  .form-group input {
+    font-family: 'Baloo Bhai', cursive;
+    text-align: center;
+    display: block;
+    width: 508px;
+    padding: 1px;
+    border: 2px solid black;
+    margin: 11px auto;
+    font-size: 25px;
+    border-radius: 8px;
+  }
+
+  .container h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .container p {
+    font-size: 20px;
+  }
+
+  .container button {
+    display: block;
+    width: 74%;
+    margin: 20px auto;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 15px;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 1000px;
+    justify-content: center;
+  }
+</style>
+
+<body>
+  <header class="header">
+    <!-- Left box for logo -->
+    <div class="left">
+      <!-- <img src="img/gym.png" alt=""> -->
+      <div style="font-family: 'Baloo Bhai', cursive;">Smart Shirt</div>
+    </div>
+    <!-- Mid box for navbar -->
+    <div class="mid">
+      <ul class="navbar">
+        <!-- <li><a href="#" class="active">Home</a></li> -->
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('about')}}">About Us</a></li>
+        <li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+        <li><a href="{{url_for('Userlogin')}}">User</a></li>
+        <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <div>
+    <table class="tab1">
+      <tr>
+        <td>User Name</td>
+        <td>Email ID</td>
+        <td>Temperature</td>
+        <td>Blood Oxygen</td>
+        <td>Heart Rate</td>
+      </tr>
+      <tr>
+        <td>{{account.username}}</td>
+        <td>{{account.email}}</td>
+        <td>{{ Temperature }}</td>
+        <td>{{ BloodOxygen }}</td>
+        <td>{{ HeartRate }}</td>
+      </tr>
+
+    </table>
+  </div>
+  <br>
+  <br>
+
+
+  <a href="{{ url_for('sensor_feed') }}">
+    <center>
+      <button style="border-radius: 5px;font-family: 'Lato'; font-size: 15px; color: black;">Graphs</button>
+    </center>
+  </a>
+
+
+</body>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</html>

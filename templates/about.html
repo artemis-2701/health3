@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<!-- Roboto -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    /* CSS Reset */
+    body {
+        /* font-family: 'Baloo Bhai', cursive; */
+        /* font-family: 'Roboto', sans-serif; */
+        font-family: 'Lato', sans-serif;
+        /* color: white; */
+        color: #ece1e1;
+        margin: 0px;
+        padding: 0px;
+        background-image: url('../static/green.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        /* opacity: 0.5; */
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 60px;
+        top: 20px;
+    }
+
+    .left div {
+        line-height: 19px;
+        font-size: 33px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .mid {
+        display: block;
+        width: 36%;
+        margin: 29px auto;
+        /* border: 2px solid green; */
+    }
+
+    .right {
+        position: absolute;
+        right: 34px;
+        top: 43px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .navbar {
+        display: inline-block;
+        width: 675px;
+        margin-left: 290px;
+        margin-top: 5px;
+        /* border: 3px solid cornsilk; */
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .navbar li a {
+        color: white;
+        text-decoration: none;
+        padding: 34px 23px;
+        font-family: 'Baloo Bhai', cursive;
+
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: none;
+        color: grey;
+
+    }
+
+    .btn {
+        font-family: 'Baloo Bhai', cursive;
+        margin: 0px 9px;
+        background-color: black;
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid grey;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(31, 30, 30);
+    }
+
+    .container {
+        border: 2px solid white;
+        margin: auto;
+        margin-top: 10px;
+        padding: 20px;
+        width: 33%;
+        border-radius: 28px;
+    }
+
+
+    .container h1 {
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .container p {
+        font-size: 20px;
+    }
+
+    .container button {
+        display: block;
+        width: 74%;
+        margin: 20px auto;
+    }
+
+    #pro {
+        /* border: 3px solid palevioletred; */
+        margin-top: 100px;
+    }
+
+    #about1 {
+        /* border: 3px solid black; */
+        display: flex;
+        width: 1000px;
+        margin: auto;
+        padding-bottom: 40px;
+    }
+
+    #about2 {
+        /* border: 3px solid black; */
+        display: flex;
+        flex-direction: row-reverse;
+        width: 1000px;
+        margin: auto;
+    }
+
+    #jpg {
+        width: 300px;
+        height: 200px;
+        padding-left: 13px;
+    }
+
+    #jpg1 {
+        width: 300px;
+        height: 200px;
+        padding-left: 45px;
+    }
+
+    #para1 {
+        /* padding: 50px 10px 50px 10px; */
+        padding: 22px 13px 50px 15px;
+        font-size: 20px;
+
+    }
+
+    #para2 {
+        /* padding: 50px 10px 100px 10px; */
+        padding: 20px 19px 30px 35px;
+        font-size: 20px;
+
+    }
+</style>
+
+<body>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <!-- <img src="img/gym.png" alt=""> -->
+            <div style="font-family: 'Baloo Bhai', cursive; color: white;">Smart Shirt</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <!-- <li><a href="#" class="active">Home</a></li> -->
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('about')}}">About Us</a></li>
+                <li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+                <li><a href="{{url_for('Userlogin')}}">User</a></li>
+                <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+            </ul>
+        </div>
+        
+
+        <div id=pro>
+            <div id="about1">
+                <div id="para1">
+
+                    <ul>
+                        <li>
+                            <div> <p>This Smart Shirt measures your vital signs like Blood Pressure, Temperature and Perspiration etc., and keep track of your health fitness</p> </div>
+                        </li>
+                        <li>
+                            <div> <p>Easy to use and wear </p></div>
+                        </li>
+                    </ul>
+                    
+                    
+                </div>
+                <img id="jpg" src="../static/smartshirt1.jpg" alt="">
+            </div>
+            <div id="about2">
+
+                <div id="para2">
+                    <ul>
+                        <li><div> <p>Helps in online remote monitoring of the user, communicates the data in real-time</p> </div></li>
+                        <li><div> <p>Contains a web based dashboard for sharing data with users and doctors</p></div></li>
+                    </ul>
+                </div>
+
+                <img id="jpg1" src="../static/christin-hume-mfB1B1s4sMc-unsplash.jpg" alt="">
+
+            </div>
+        </div>
+
+</body>
+
+</html>

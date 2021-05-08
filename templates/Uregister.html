@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>User Register</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+</head>
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+	body{
+		background-image: url('../static/green.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+
+	.left {
+		display: inline-block;
+		/* border: 2px solid red; */
+		position: absolute;
+		left: 60px;
+		top: 20px;
+	}
+
+	.left div {
+		line-height: 19px;
+		font-size: 35px;
+		text-align: center;
+		margin-top: 27px;
+	}
+
+	.mid {
+		display: block;
+		width: 36%;
+		margin: 29px auto;
+		/* border: 2px solid green; */
+	}
+
+	.right {
+		position: absolute;
+		right: 34px;
+		top: 43px;
+		display: inline-block;
+		/* border: 2px solid yellow; */
+	}
+
+	.navbar {
+		display: inline-block;
+		width: 730px;
+		/* border: 3px solid cornsilk; */
+		margin-left: 290px;
+		margin-top: 5px;
+	}
+
+	.navbar li {
+		display: inline-block;
+		font-size: 25px;
+	}
+
+	.navbar li a {
+		color: white;
+		text-decoration: none;
+		padding: 34px 23px;
+		font-family:'Baloo Bhai', cursive;
+		font-size: 25px;
+	}
+
+	.navbar li a:hover,
+	.navbar li a.active {
+		text-decoration: none;
+		color: grey;
+
+	}
+
+	.btn {
+		font-family: 'Baloo Bhai', cursive;
+		margin: 0px 9px;
+		background-color: black;
+		color: white;
+		padding: 4px 14px;
+		border: 2px solid grey;
+		border-radius: 10px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: rgb(31, 30, 30);
+	}
+
+	.container {
+		/* border: 2px solid white; */
+		margin: auto;
+		margin-top: 40px;
+		padding: 75px;
+		width: 33%;
+		/* border-radius: 28px; */
+	}
+
+	.container h1 {
+		text-align: center;
+		font-size: 50px;
+	}
+
+	.container p {
+		font-size: 20px;
+	}
+
+	.container button {
+		display: block;
+		width: 74%;
+		margin: 20px auto;
+	}
+</style>
+<body>
+
+	<header class="header">
+		<!-- Left box for logo -->
+		<div class="left">
+			<!-- <img src="img/gym.png" alt=""> -->
+			<div style="font-family: 'Baloo Bhai', cursive;color: white;">Smart Shirt</div>
+		</div>
+		<!-- Mid box for navbar -->
+		<div class="mid">
+			<ul class="navbar">
+				<!-- <li><a href="#" class="active">Home</a></li> -->
+				<li><a href="{{url_for('home')}}">Home</a></li>
+				<li><a href="{{url_for('about')}}">About Us</a></li>
+				<li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+				<li><a href="{{url_for('Userlogin')}}">User</a></li>
+				<li><a href="{{url_for('contact')}}">Contact Us</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="register">
+		<h1>Register</h1>
+		<div class="links">
+			<!-- <a href="{{ url_for('about') }}">Home</a> -->
+			<a href="{{ url_for('Userlogin') }}">Login</a>
+			<a href="{{ url_for('Uregister') }}" class="active">Register</a>
+		</div>
+		<form action="{{ url_for('Uregister') }}" method="post" autocomplete="off">
+		
+			<input type="text" name="username" placeholder="Name" id="username" required>
+		
+			<input type="password" name="password" placeholder="Password" id="password" required>
+			
+			<br>
+			<input type="email" name="email" placeholder="Email" id="email" required>
+			<br>
+			<input type="text" name="comp" placeholder="Known complications" id="comp" required>
+			<br>
+			<input style="height: 50px;" type="number" name="age" placeholder=" Age" id="age" required>
+			<br><br>
+			<div><input type="radio" name="sex"  id="sex" value="male">Male
+				<input type="radio" name="sex" id="sex" value="female">Female</div>
+			<br>
+			
+			<div class="msg">{{ msg }}</div>
+			<input type="submit" value="User Register">
+		</form>
+	</div>
+</body>
+</html>

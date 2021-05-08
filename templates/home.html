@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Smart Shirt</title>
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+  /* CSS Reset */
+  body {
+    /* font-family: 'Baloo Bhai', cursive; */
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../static/green.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+
+  .left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 60px;
+    /* top: 20px; */
+  }
+
+  .left div {
+    line-height: 19px;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mid {
+    display: block;
+    width: 36%;
+    margin: 29px auto;
+    /* border: 2px solid green; */
+  }
+
+  .right {
+    position: absolute;
+    right: 34px;
+    top: 43px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+  }
+
+  .navbar {
+    display: inline-block;
+    width: 675px;
+    margin-left: 290px;
+    margin-top: 5px;
+    /* border: 3px solid cornsilk; */
+  }
+
+  .navbar li {
+    display: inline-block;
+    font-size: 25px;
+  }
+
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 34px 23px;
+    font-family:'Baloo Bhai', cursive;
+
+  }
+
+  .navbar li a:hover,
+  .navbar li a.active {
+    text-decoration: none;
+    color: grey;
+
+  }
+
+  .btn {
+    font-family: 'Baloo Bhai', cursive;
+    margin: 0px 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: rgb(31, 30, 30);
+  }
+
+  .container {
+    /* border: 2px solid white; */
+    margin: auto;
+    margin-top: 40px;
+    padding: 75px;
+    width: 33%;
+    color: #ece1e1;
+    /* border-radius: 28px; */
+  }
+
+  .container h1 {
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+
+  .container p {
+    font-size: 20px;
+  }
+
+  .container button {
+    display: block;
+    width: 74%;
+    margin: 20px auto;
+  }
+  
+  
+  
+</style>
+
+<body>
+  <!-- <img src="../static/pexels-negative-space-48604.jpg" alt=""> -->
+  
+    <header class="header">
+      <!-- Left box for logo -->
+        <div class="left">
+          <!-- <img src="img/gym.png" alt=""> -->
+          <div style="font-family: 'Baloo Bhai', cursive;">Smart Shirt</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="mid">
+          <ul class="navbar">
+            <!-- <li><a href="#" class="active">Home</a></li> -->
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('about')}}">About Us</a></li>
+            <li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+            <li><a href="{{url_for('Userlogin')}}">User</a></li>
+            <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="container">
+      <h1>Welcome!</h1>
+
+      <div style="margin-top: 5px;">
+        <div style="font-size: 25px; text-align: center;">Meet your new health partner.</div>
+        <div style="font-size: 20px; text-align: center;width: 510px;margin-top: 5px;">This helps you at work, during sports and in everyday life.</div>
+      </div>
+      
+      
+    </div>
+
+
+  
+</body>
+
+</html>

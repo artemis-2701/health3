@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="refresh" content="5" />
+
+	<title>Doctor's Account</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+	/* CSS Reset */
+	body {
+		/* font-family: 'Baloo Bhai', cursive; */
+		font-family: 'Lato', sans-serif;
+		color: white;
+		margin: 0px;
+		padding: 0px;
+		background-image: url('../static/green.jpg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		/* opacity: 0.5; */
+	}
+
+	.left {
+		display: inline-block;
+		/* border: 2px solid red; */
+		position: absolute;
+		left: 60px;
+		top: 20px;
+	}
+
+	.left div {
+		line-height: 19px;
+		font-size: 35px;
+		text-align: center;
+		margin-top: 27px;
+	}
+
+	.mid {
+		display: block;
+		width: 36%;
+		margin: 29px auto;
+		/* border: 2px solid green; */
+	}
+
+	.right {
+		position: absolute;
+		right: 34px;
+		top: 43px;
+		display: inline-block;
+		/* border: 2px solid yellow; */
+	}
+
+	.navbar {
+		display: inline-block;
+		width: 730px;
+		/* border: 3px solid cornsilk; */
+		margin-left: 290px;
+		margin-top: 5px;
+	}
+
+	.navbar li {
+		display: inline-block;
+		font-size: 25px;
+	}
+
+	.navbar li a {
+		color: white;
+		text-decoration: none;
+		padding: 34px 23px;
+		font-family:'Baloo Bhai', cursive;
+		font-size: 25px;
+	}
+
+	.navbar li a:hover,
+	.navbar li a.active {
+		text-decoration: none;
+		color: grey;
+
+	}
+
+	.btn {
+		font-family: 'Baloo Bhai', cursive;
+		margin: 0px 9px;
+		background-color: black;
+		color: white;
+		padding: 4px 14px;
+		border: 2px solid grey;
+		border-radius: 10px;
+		font-size: 20px;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: rgb(31, 30, 30);
+	}
+
+	.container {
+		/* border: 2px solid white; */
+		margin: auto;
+		margin-top: 40px;
+		padding: 75px;
+		width: 33%;
+		/* border-radius: 28px; */
+	}
+
+	.form-group input {
+		font-family: 'Baloo Bhai', cursive;
+		text-align: center;
+		display: block;
+		width: 508px;
+		padding: 1px;
+		border: 2px solid black;
+		margin: 11px auto;
+		font-size: 25px;
+		border-radius: 8px;
+	}
+
+	.container h1 {
+		text-align: center;
+		font-size: 50px;
+	}
+
+	.container p {
+		font-size: 20px;
+	}
+
+	.container button {
+		display: block;
+		width: 74%;
+		margin: 20px auto;
+	}
+
+  table,th,td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    th,td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    #t01 {
+      width: 100%;
+      background-color: rgb(59, 59, 59);
+    }
+	table.datatable, table.datatable tr, table.datatable td{
+		border: 1px solid white;
+      border-collapse: collapse;
+	  font-family: 'Lato', sans-serif;
+
+	}
+	
+</style>
+
+<body>
+	<header class="header">
+		<!-- Left box for logo -->
+		<div class="left">
+			<!-- <img src="img/gym.png" alt=""> -->
+			<div style="font-family: 'Baloo Bhai', cursive;">Smart Shirt</div>
+		</div>
+		<!-- Mid box for navbar -->
+		<div class="mid">
+			<ul class="navbar">
+				<!-- <li><a href="#" class="active">Home</a></li> -->
+				<li><a href="{{url_for('home')}}">Home</a></li>
+				<li><a href="{{url_for('about')}}">About Us</a></li>
+				<li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+				<li><a href="{{url_for('Userlogin')}}">User</a></li>
+				<li><a href="{{url_for('contact')}}">Contact Us</a></li>
+			</ul>
+		</div>
+	</header>
+
+      <!-- <div style="font-family: 'Lato', sans-serif;">Doctor :{{account.username}}</div>
+      <div style="font-family: 'Lato', sans-serif;">Email :{{account.email}}</div>
+      <div style="font-family: 'Lato', sans-serif;">Specialization: {{account.dept}}</div> -->
+	  <div>
+		<table class="datatable">
+			<tr>
+				<td>Doctor</td>
+				<td>{{account.username}}</td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td>{{account.email}}</td>
+			</tr>
+			<tr>
+				<td>Specialization</td>
+				<td>{{account.dept}}</td>
+			</tr>
+  
+		</table>
+	  </div>
+	  
+      <br>
+      <br>
+
+      <div><center style="font-family: 'Baloo Bhai', cursive; font-size: 20px;">Patient's Data</center></div>
+      <!--{{data}}-->
+
+      <h2>
+        <table id="t01">
+          <tr>
+            <th>ID</th>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Email</th>
+            <th>Temprature</th>
+            <th>Heart Rate</th>
+            <th>SpO2</th>
+            <th>Perspiration</th>
+            <th>ECG</th>
+            <th>Known Complications</th>
+            <th>Created at</th>
+            <th>Real-time Graphs</th>
+          </tr>
+
+          <tr>
+            <td>{{user1.id}}</td>
+            <td>{{user1.username}}</td>
+            <td>{{user1.age}}</td>
+            <td>{{user1.sex}}</td>
+            <td>{{user1.email}}</td>
+            <td>{{data[0][0]}}</td>
+            <td>{{data[0][1]}}</td>
+            <td>{{data[0][2]}}</td>
+            <td>{{data[0][3]}}</td>
+            <td>{{data[0][4]}}</td>
+            <td>{{user1.comp}}</td>
+            <td>{{data[0][5]}}</td>
+            <td><a href="{{ url_for('data1') }}">User 1</a></td>
+          </tr>
+
+          <tr>
+            <td>{{user2.id}}</td>
+            <td>{{user2.username}}</td>
+            <td>{{user2.age}}</td>
+            <td>{{user2.sex}}</td>
+            <td>{{user2.email}}</td>
+            <td>{{data[1][0]}}</td>
+            <td>{{data[1][1]}}</td>
+            <td>{{data[1][2]}}</td>
+            <td>{{data[1][3]}}</td>
+            <td>{{data[1][4]}}</td>
+            <td>{{user2.comp}}</td>
+            <td>{{data[1][5]}}</td>
+            <td><a href="{{ url_for('data2') }}">User 2</a></td>
+          </tr>
+
+          <tr>
+            <td>{{user3.id}}</td>
+            <td>{{user3.username}}</td>
+            <td>{{user3.age}}</td>
+            <td>{{user3.sex}}</td>
+            <td>{{user3.email}}</td>
+            <td>{{data[2][0]}}</td>
+            <td>{{data[2][1]}}</td>
+            <td>{{data[2][2]}}</td>
+            <td>{{data[2][3]}}</td>
+            <td>{{data[2][4]}}</td>
+            <td>{{user3.comp}}</td>
+            <td>{{data[2][5]}}</td>
+            <td><a href="{{ url_for('data3') }}">User 3</a></td>
+          </tr>
+
+        </table>
+      </h2>
+
+      <br>
+      <br>
+
+	<div><center><a href="{{ url_for('logout') }}"><button style="font-family: 'Baloo Bhai', cursive; font-size: 18px; color: black;">Logout</button></a></center></div>
+</body>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Dashboard-User 2</title>
+</head>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        /* font-family: 'Baloo Bhai', cursive; */
+        font-family: 'Lato', sans-serif;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        background-image: url('../static/green.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        /* opacity: 0.5; */
+    }
+
+    table {
+        margin: auto;
+    }
+</style>
+
+<body>
+
+    <div> <a href="{{ url_for('Daccount') }}"><button style="border-radius: 7px;
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 30px;
+        margin-top: 22px;">Back</button></a></td>
+    </div>
+
+        <table>
+            <tr><td colspan="2">
+            <h1 align="center">Data Collection Dashboard</h1>
+            </td></tr>
+            <tr><td>
+            <iframe width="450" height="260" src="https://api.thingspeak.com/channels/1376244/charts/3?bgcolor=%23ffffff&color=%23F62020&dynamic=true&results=15&type=line&update=10"></iframe>
+            </td>
+            <td><iframe width="450" height="260" src="https://thingspeak.com/channels/1376244/charts/4?bgcolor=%23ffffff&color=%23F62020&dynamic=true&results=15&type=line&update=10"></iframe>
+            </td></tr>
+            <tr><td>
+            <iframe width="450" height="260" src="https://thingspeak.com/channels/1376244/charts/5?bgcolor=%23ffffff&color=%23F62020&dynamic=true&results=15&type=line&update=10"></iframe>
+            </td>
+            <td>
+            <iframe width="450" height="260" src="https://thingspeak.com/channels/1376244/charts/6?bgcolor=%23ffffff&color=%23F62020&dynamic=true&results=15&type=line&update=10"></iframe>
+             </td>
+        </table>
+</body>
+
+</html>

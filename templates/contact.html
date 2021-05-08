@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Baloo Bhai', cursive; */
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('../static/green.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+
+  .left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 60px;
+    /* top: 20px; */
+  }
+
+  .left div {
+    line-height: 19px;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mid {
+    display: block;
+    width: 36%;
+    margin: 30px auto;
+    /* border: 2px solid green; */
+  }
+
+  .right {
+    position: absolute;
+    right: 34px;
+    top: 43px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+  }
+
+  .navbar {
+    display: inline-block;
+    width: 675px;
+    margin-left: 290px;
+    margin-top: 5px;
+    /* border: 3px solid cornsilk; */
+  }
+
+  .navbar li {
+    display: inline-block;
+    font-size: 25px;
+  }
+
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 34px 23px;
+    font-family:'Baloo Bhai', cursive;
+
+  }
+
+  .navbar li a:hover,
+  .navbar li a.active {
+    text-decoration: none;
+    color: grey;
+
+  }
+
+  .btn {
+    font-family: 'Baloo Bhai', cursive;
+    margin: 0px 9px;
+    background-color: black;
+    color: white;
+    padding: 4px 14px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: rgb(31, 30, 30);
+  }
+
+section{
+  /* height: 100vh; */
+  width: 100%;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-container{
+  width: 90%;
+  max-width: 500px;
+  margin:0 auto;
+  margin-top: -10px;
+  padding: 20px;
+  /* box-shadow: 0px 0px 20px #00000010;
+  background-color: white; */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.form-group{
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.form-group input,
+.form-group textarea{
+  width: 100%;
+  padding: 10px;
+  /* border: 1px solid rgba(128, 128, 128, 0.199); */
+  margin-top: 5px;
+  border-radius: 7px;
+}
+textarea{
+  resize: vertical;
+}
+button[type="submit"]{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  /* font-family: 'Montserrat'; */
+  font-family: 'Baloo Bhai';
+  color: black;
+  /* background-color: rgb(227, 233, 238); */
+  text-align: center;
+  cursor: pointer;
+  transition: .3s ease background-color;
+  margin-top: 10px;
+}
+button[type="submit"]:hover{
+  background-color: rgb(214, 226, 236);
+}
+#status{
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+}
+#status.success{
+  background-color: rgb(211, 250, 153);
+  color: green;
+  animation: status 4s ease  forwards;
+}
+#status.error{
+  background-color: rgb(250, 129, 92);
+  color: rgb(252, 252, 252);
+  animation: status 4s ease  forwards;
+}
+
+@keyframes status{
+  0%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+</style>
+
+<body>
+
+  <header class="header">
+    <!-- Left box for logo -->
+      <div class="left">
+        <!-- <img src="img/gym.png" alt=""> -->
+        <div style="font-family: 'Baloo Bhai', cursive;">Smart Shirt</div>
+      </div>
+      <!-- Mid box for navbar -->
+      <div class="mid">
+        <ul class="navbar">
+          <!-- <li><a href="#" class="active">Home</a></li> -->
+          <li><a href="{{url_for('home')}}">Home</a></li>
+          <li><a href="{{url_for('about')}}">About Us</a></li>
+          <li><a href="{{url_for('Doctorlogin')}}">Doctor</a></li>
+          <li><a href="{{url_for('Userlogin')}}">User</a></li>
+          <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+        </ul>
+      </div>
+  </header>
+<div style="font-family:'Baloo Bhai', cursive;font-size: 30px;
+margin-top: 50px;margin-left: 280px;
+    display: inline-block">Contact Us:</div>
+    <br>
+  <section>
+    <div class="form-container">
+      <form action="https://formspree.io/f/xayaqkzn" id="test-form" method="POST">
+
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email">
+        </div>
+
+        <div class="form-group">
+          <label for="massage">Message</label>
+          <textarea name="massage" id="massage" rows="10" maxlength="200"></textarea>
+        </div>
+
+        <button type="submit" id="test-form-submit">Submit</button>
+      </form>
+    </div>
+    <div id="status"></div>
+  </section>
+  
+  <script>
+  window.addEventListener("DOMContentLoaded", function () {
+
+// get the form elements defined in your form HTML above
+
+var form = document.getElementById("test-form");
+var button = document.getElementById("test-form-submit");
+var status = document.getElementById("status");
+
+// Success and Error functions for after the form is submitted
+
+function success() {
+  form.reset();
+  status.classList.add('success');
+  status.innerHTML = "Thanks!";
+}
+
+function error() {
+  status.classList.add('error');
+  status.innerHTML = "Oops! There was a problem.";
+}
+
+// handle the form submission event
+
+form.addEventListener("submit", function (ev) {
+  ev.preventDefault();
+  var data = new FormData(form);
+  ajax(form.method, form.action, data, success, error);
+});
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+var xhr = new XMLHttpRequest();
+xhr.open(method, url);
+xhr.setRequestHeader("Accept", "application/json");
+xhr.onreadystatechange = function () {
+  if (xhr.readyState !== XMLHttpRequest.DONE) return;
+  if (xhr.status === 200) {
+    success(xhr.response, xhr.responseType);
+  } else {
+    error(xhr.status, xhr.response, xhr.responseType);
+  }
+};
+xhr.send(data);
+}
+  </script>
+
+</body>
+
+
+</html>
